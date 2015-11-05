@@ -33,6 +33,9 @@ How to use
       console.log( data.word );
     });
 
+    // 设定 api 调用超时时间，单位是ms，默认是 10000， 即 10 秒
+    ocr.timeout = 10000;
+
 实测
 ===========
 
