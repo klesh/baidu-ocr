@@ -20,6 +20,9 @@ How to use
     var ocr = require('baidu-ocr').create( 'your api key' ),
       image = fs.createReadStream( __dirname + '/love-letter.jpg' );
 
+    // 设定 api 调用超时时间，单位是ms，默认是 10000， 即 10 秒
+    ocr.timeout = 10000;
+
     // detectType: `LocateRecognize`代表整图文字检测、识别,以行为单位（默认）  
     // languageType: `CHN_ENG`(中英)（默认）  
     // imageType: `2`代表图片原文件（只支持JPG，大小不能超过300K）
@@ -33,8 +36,6 @@ How to use
       console.log( data.word );
     });
 
-    // 设定 api 调用超时时间，单位是ms，默认是 10000， 即 10 秒
-    ocr.timeout = 10000;
 
 实测
 ===========
